@@ -98,3 +98,24 @@ public enum Number{a, b, c, d};
 ```
 ### Implementing Arrays
 - **reference types**
+#### Declaring an Array
+```
+datatype[] Arrayname;
+```
+#### Intializing and Assigning Values to Array
+##### Initializing Array
+```
+int[] Score;
+Score = new int[10];
+int[] Score = new int[10];
+```
+##### Assigning Values to the Array
+```
+Score[0] = 5;
+int[] Score = new int[10]{0,1,2,...,9};
+```
+##### Copying an Array
+```
+int[] Score = new int[10]{0,1,2,...,9};
+int[] Target = Source;
+```
