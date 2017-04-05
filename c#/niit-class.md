@@ -16,6 +16,27 @@
             - [性质](#性质)
             - [枚举类型与基础类型的转换](#枚举类型与基础类型的转换)
         - [Implementing Arrays](#implementing-arrays)
+            - [Declaring an Array](#declaring-an-array)
+            - [Intializing and Assigning Values to Array](#intializing-and-assigning-values-to-array)
+                - [Initializing Array](#initializing-array)
+                - [Assigning Values to the Array](#assigning-values-to-the-array)
+                - [Copying an Array](#copying-an-array)
+            - [Manipulating Array Elements](#manipulating-array-elements)
+                - [foreach loop](#foreach-loop)
+                - [Param Arrays](#param-arrays)
+            - [Multidimensional Arrays](#multidimensional-arrays)
+                - [The Array Class](#the-array-class)
+        - [Implementing Indexers](#implementing-indexers)
+        - [Using Collections](#using-collections)
+        - [Implementing Generics](#implementing-generics)
+    - [-5- Extending Existing Classes](#-5--extending-existing-classes)
+        - [Implementing Inheritance](#implementing-inheritance)
+        - [Using Abstract Class](#using-abstract-class)
+            - [Using Abstract Methods](#using-abstract-methods)
+            - [Using Virtual Function 虚方法](#using-virtual-function-虚方法)
+        - [Using Sealed Class](#using-sealed-class)
+            - [Using Sealed Class](#using-sealed-class-1)
+        - [Using Interfaces](#using-interfaces)
 
 <!-- /TOC -->
 ---
@@ -135,6 +156,16 @@ int[] Target = Source;
 ### Using Collections
 ### Implementing Generics
 ## -5- Extending Existing Classes
+---
+temp note
+- 没有虚类
+- 抽象类中，抽象函数必须是public的
+- 实方法不能被改写，但可以被覆盖
+- sealed以后不可以被override，但是可以覆盖
+- 抽象函数被override后，基类的该函数已被改写
+- 虚函数被override后，基类的该函数无影响
+---
+
 - Interfaces Relationship 继承关系
 - Composition Relationship 组合关系
     - 父类消失，子类也消失
@@ -170,7 +201,7 @@ class <derived_class> : <base_class>
 - 一个非抽象类从抽象类中派生，必须重写（override）所有继承而来的抽象成员
 #### Using Abstract Methods
 ```
-abstract return-type method-name(...);
+public abstract return-type method-name(...);
 ```
 #### Using Virtual Function 虚方法
 ```

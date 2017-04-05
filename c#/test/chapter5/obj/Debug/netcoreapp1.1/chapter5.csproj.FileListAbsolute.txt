@@ -1,0 +1,8 @@
+F:\GitHub\notes\c#\test\chapter5\bin\Debug\netcoreapp1.1\chapter5.deps.json
+F:\GitHub\notes\c#\test\chapter5\bin\Debug\netcoreapp1.1\chapter5.runtimeconfig.json
+F:\GitHub\notes\c#\test\chapter5\bin\Debug\netcoreapp1.1\chapter5.runtimeconfig.dev.json
+F:\GitHub\notes\c#\test\chapter5\bin\Debug\netcoreapp1.1\chapter5.dll
+F:\GitHub\notes\c#\test\chapter5\bin\Debug\netcoreapp1.1\chapter5.pdb
+F:\GitHub\notes\c#\test\chapter5\obj\Debug\netcoreapp1.1\chapter5.AssemblyInfo.cs
+F:\GitHub\notes\c#\test\chapter5\obj\Debug\netcoreapp1.1\chapter5.dll
+F:\GitHub\notes\c#\test\chapter5\obj\Debug\netcoreapp1.1\chapter5.pdb
