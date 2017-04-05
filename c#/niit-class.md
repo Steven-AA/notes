@@ -119,3 +119,69 @@ int[] Score = new int[10]{0,1,2,...,9};
 int[] Score = new int[10]{0,1,2,...,9};
 int[] Target = Source;
 ```
+#### Manipulating Array Elements
+
+##### foreach loop
+##### Param Arrays
+#### Multidimensional Arrays
+##### The Array Class
+|Property|Explanation|
+|:-------|:----------|
+|Length|return number|
+|Rank|return dimension|
+|IsFixedSize|
+|IsReadOnly|
+### Implementing Indexers
+### Using Collections
+### Implementing Generics
+## -5- Extending Existing Classes
+- Interfaces Relationship 继承关系
+- Composition Relationship 组合关系
+    - 父类消失，子类也消失
+- Utilization Relationship 使用关系
+- Instantiation Relationship 实例关系
+### Implementing Inheritance
+```
+base class --> derived class
+automobile --> Car
+```
+Interfaces Relationship 继承关系：
+- 一个类只能有一个父类
+- overriding 改写 和 覆盖
+    - 改写修改了基类???
+- 子类可访问父类 protected
+- 继承可传递
+- 派生类是基类的扩展
+- 构造函数和析构函数不能被继承
+- 派生类可以覆盖已继承成员
+- 类可以定义虚方法、虚属性、虚索引器
+- 先执行父类的构造函数，再执行子类的构造函数
+- 先执行子类的析构函数，再执行父类的析构函数
+```
+class <derived_class> : <base_class>
+```
+派生类：
+- @todo
+
+### Using Abstract Class
+- 不能实例化
+- 只能在抽象类中声明抽象方法
+- 不能密封 sealed
+- 一个非抽象类从抽象类中派生，必须重写（override）所有继承而来的抽象成员
+#### Using Abstract Methods
+```
+abstract return-type method-name(...);
+```
+#### Using Virtual Function 虚方法
+```
+virtual return-type method-name(...){...}
+```
+### Using Sealed Class
+```
+sealed class-name(...);
+```
+- 密封类不可能有派生类
+- 虚函数无效，转为非虚
+#### Using Sealed Class
+
+### Using Interfaces
