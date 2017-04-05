@@ -107,7 +107,7 @@ enum days{sat, sun, ..., fri};
 - 每一个枚举成员都都具有相关联的常数值
 #### 枚举类型与基础类型的转换
 - 基础类型和枚举类型不能相互隐式转换
-```
+```csharp
 public enum Number{a, b, c, d};
 ...
 ...Main
@@ -120,7 +120,7 @@ public enum Number{a, b, c, d};
 ### Implementing Arrays
 - **reference types**
 #### Declaring an Array
-```
+```csharp
 datatype[] Arrayname;
 ```
 #### Intializing and Assigning Values to Array
@@ -131,12 +131,12 @@ Score = new int[10];
 int[] Score = new int[10];
 ```
 ##### Assigning Values to the Array
-```
+```csharp
 Score[0] = 5;
 int[] Score = new int[10]{0,1,2,...,9};
 ```
 ##### Copying an Array
-```
+```csharp
 int[] Score = new int[10]{0,1,2,...,9};
 int[] Target = Source;
 ```
@@ -152,7 +152,19 @@ int[] Target = Source;
 |Rank|return dimension|
 |IsFixedSize|
 |IsReadOnly|
+
+|Method|Explanation|
+|:-----|:--------|
+Sort|
+Clear|
+GetLength|
+GetValue|
+IndexOf|
+
 ### Implementing Indexers
+```
+
+```
 ### Using Collections
 ### Implementing Generics
 ## -5- Extending Existing Classes

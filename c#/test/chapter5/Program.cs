@@ -55,6 +55,10 @@ namespace chapter5
         {
             Console.WriteLine("D.f");
         }
+        public void G()
+        {
+            Console.WriteLine("D.G");
+        }
         public override void g()
         {
             Console.WriteLine("D.g");
