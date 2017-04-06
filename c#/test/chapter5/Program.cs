@@ -42,7 +42,7 @@ namespace chapter5
     {
         public override void F()
         {
-            Console.WriteLine("B.F");
+            Console.WriteLine("C.F");
         }
     }
     public class D:B
@@ -55,14 +55,18 @@ namespace chapter5
         {
             Console.WriteLine("D.f");
         }
-        public void G()
-        {
-            Console.WriteLine("D.G");
-        }
+        // public void G()
+        // {
+        //     Console.WriteLine("D.G");
+        // }
         public override void g()
         {
             Console.WriteLine("D.g");
         }
+    }
+    class E:D
+    {
+        int a;
     }
     class Program
     {
@@ -71,6 +75,7 @@ namespace chapter5
             B B = new B();
             C C = new C();
             D D = new D();
+            E E = new E();
             Console.WriteLine("B:");
             B.F();
             B.f();
@@ -86,6 +91,7 @@ namespace chapter5
             D.f();
             D.G();
             D.g();
+            E.G();
         }
     }
 }

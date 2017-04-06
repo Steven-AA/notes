@@ -48,7 +48,7 @@
 ### Working with Properties
 #### Defining Properties
 - attribute 属性
-```
+```csharp
 private int x;
 public class X
 {
@@ -75,7 +75,7 @@ public class X
 ### Describing Memory Allocation
 - **Value Types** : 
 - **Reference Types** : address
-    ```
+    ```csharp
     Car Ford = new Car();
     Car Fuuuuu;
     Fuuuuu = Ford;//指向同一个空间
@@ -94,7 +94,7 @@ public class X
 - 
 
 ### Using Enumerations //枚举类型
-```
+```csharp
 public enum name: 基础类型(default:int)
 {
 
@@ -125,7 +125,7 @@ datatype[] Arrayname;
 ```
 #### Intializing and Assigning Values to Array
 ##### Initializing Array
-```
+```csharp
 int[] Score;
 Score = new int[10];
 int[] Score = new int[10];
@@ -146,24 +146,48 @@ int[] Target = Source;
 ##### Param Arrays
 #### Multidimensional Arrays
 ##### The Array Class
-|Property|Explanation|
-|:-------|:----------|
-|Length|return number|
-|Rank|return dimension|
-|IsFixedSize|
-|IsReadOnly|
+| Property    | Explanation      |
+| :---------- | :--------------- |
+| Length      | return number    |
+| Rank        | return dimension |
+| IsFixedSize |                  |
+| IsReadOnly  |                  |
 
-|Method|Explanation|
-|:-----|:--------|
-Sort|
-Clear|
-GetLength|
-GetValue|
-IndexOf|
+| Method    | Explanation |
+| :-------- | :---------- |
+| Sort      |             |
+| Clear     |             |
+| GetLength |             |
+| GetValue  |             |
+| IndexOf   |             |
 
 ### Implementing Indexers
-```
-
+```csharp
+...
+class indexers
+{
+    private string []name = new string[5];
+    public string this [int index]
+    {
+        get
+        {
+            return name[index];
+        }
+        set
+        {
+            name[index]=value;
+        }
+    }
+}
+class Main
+{
+    public static void Main()
+    {
+        indexers ind = new Indexers();
+        ind[0] = "Jhon";
+        ...
+    }
+}
 ```
 ### Using Collections
 ### Implementing Generics
@@ -184,7 +208,7 @@ temp note
 - Utilization Relationship 使用关系
 - Instantiation Relationship 实例关系
 ### Implementing Inheritance
-```
+```csharp
 base class --> derived class
 automobile --> Car
 ```

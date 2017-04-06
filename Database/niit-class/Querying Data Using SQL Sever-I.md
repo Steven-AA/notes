@@ -25,10 +25,14 @@
         - [Using Functions to Customize the Result Set](#using-functions-to-customize-the-result-set)
             - [Using String Functions](#using-string-functions)
             - [Using Conversion Functions](#using-conversion-functions)
-            - [Using Data Functions](#using-data-functions)
+            - [Using Date Functions](#using-date-functions)
             - [Using Mathematical Functions](#using-mathematical-functions)
             - [Using Logical Functions](#using-logical-functions)
             - [Using Ranking Function](#using-ranking-function)
+                - [row_number()](#row_number)
+                - [rank()](#rank)
+                - [dense_rank()](#dense_rank)
+                - [ntile()](#ntile)
             - [Using Analytical Function](#using-analytical-function)
             - [Using System Function](#using-system-function)
         - [Summarizing and Grouping Data](#summarizing-and-grouping-data)
@@ -65,11 +69,11 @@ select A 'a'...
 ```
 ##### NEW
     select A,'b',C,...
-|A  |(No column name)  |C  |
-|---|:----------------:|---|
-|...|b|...|
-|...|b|...|
-|...|b|...|
+| A   | (No column name) | C   |
+| --- | :--------------: | --- |
+| ... |        b         | ... |
+| ... |        b         | ... |
+| ... |        b         | ... |
 ...
 ##### Concatenating
     select A + B + '...'
@@ -80,12 +84,12 @@ select A 'a'...
     From CC
     Where A = 'a', B < 5 and B > 3
 ##### Retrieving Records That Match a Pattern
-|Wildword|Description|
-|:-------|:-|
-|%|any zero or more character(s)|
-|_|any single character|
-|[]|any single character in []|
-|[^]|any single character not in []|
+| Wildword | Description                    |
+| :------- | :----------------------------- |
+| %        | any zero or more character(s)  |
+| _        | any single character           |
+| []       | any single character in []     |
+| [^]      | any single character not in [] |
     LIKE 'pattern'
 ##### Retrieving Records Contain NULL Values
     select A
@@ -103,63 +107,110 @@ select A 'a'...
 ##### Retrieving Records from a Particular Position
 @todo
 ##### Retrieving Records Without Duplication of Value
+```sql
     select [all|distinct] A
     from ....
+```
 ---
 ### Using Functions to Customize the Result Set
 #### Using String Functions
     SELECT function_name (parameters)
-
-|Function name|Example|Description|
-|:------------|:-----:|:----------|
-|Ascii(character_expression)|select ascii('ABC')|Return 65|
-|Char(integer_expression)|select char(65)|Return 'A'|
-|Charindex('pattern',expression)|select charindex('E','HELLO')|Return 2|
-|Difference|||
-|Left|||
-|Len|||
-|Lower|||
-|Replace|||
-|Replicate|||
-|Patindex|||
-|Reverse|||
-Right|
-Rtrim|
-Space|
-Str|
-Stuff|
-Substring|
-Upper|
-Concat|
-
+```sql
+| Function name                   |             Example             | Description       |
+| :------------------------------ | :-----------------------------: | :---------------- |
+| Ascii(character_expression)     |       select ascii('ABC')       | Return 65         |
+| Char(integer_expression)        |         select char(65)         | Return 'A'        |
+| Charindex('pattern',expression) |  select charindex('E','HELLO')  | Return 2          |
+| Difference                      |                                 |                   |
+| Left                            |                                 |                   |
+| Len                             |                                 |                   |
+| Lower                           |                                 |                   |
+| Replace                         |                                 |                   |
+| Replicate                       |                                 |                   |
+| Patindex                        |                                 |                   |
+| Reverse                         |                                 |                   |
+| Right                           |                                 |                   |
+| Rtrim                           |                                 | remove any blanks |
+| Space                           |                                 |                   |
+| Str                             |                                 |                   |
+| Stuff                           |                                 |                   |
+| Substring                       | SELECT Substring('weather',3,2) | return 'at'       |
+| Upper                           |                                 |                   |
+| Concat                          |                                 |                   |
+```
 #### Using Conversion Functions
-|Function name|Example|Description|
-|:------------|:-----:|:----------|
-Parse('' as data_type)|
-Try_Parse('' as data_type)||return NULL if failed|
-Convert(|
-Try_convert|
-@todo datatime
-#### Using Data Functions
-|Function name|Example|Description|
-|:------------|:-----:|:----------|
-#### Using Mathematical Functions
-|Function name|Example|Description|
-|:------------|:-----:|:----------|
-#### Using Logical Functions
-|Function name|Example|Description|
-|:------------|:-----:|:----------|
-#### Using Ranking Function
-|Function name|Example|Description|
-|:------------|:-----:|:----------|
+| Function name                                  | Example | Description           |
+| :--------------------------------------------- | :-----: | :-------------------- |
+| Parse('' as date_type)                         |         |                       |
+| Try_Parse('' as date_type)                     |         | return NULL if failed |
+| Convert(datetype[(length)],expression[,style]) |         |                       |
+| Try_convert                                    |         |                       |
+@todo datetime
+| Style value |  Format   |
+| :---------: | :-------: |
+|      1      | mm/dd/yyy |
+|      2      | yy.mm.dd  |
+|      3      | dd/mm/yyy |
+|      4      | dd.mm.yy  |
+|      5      | dd-mm-yy  |
+#### Using Date Functions
+| Function name                                                      |              Example              | Description             |
+| :----------------------------------------------------------------- | :-------------------------------: | :---------------------- |
+| Dateadd(date part, number, date)                                   | SELECT dateadd(mm,3,'2009-01-01') |                         |
+| datediff(date part, date1, date2)                                  |                                   |                         |
+| Datename(date part, date)                                          |                                   |                         |
+| Datepart(date part, date)                                          |                                   |                         |
+| Getdate()                                                          |                                   |                         |
+| Day/Mounth/Year(date)                                              |                                   |                         |
+| Getutcdate                                                         |                                   | return the current date |
+| Datefromparts(year,date,month)                                     |                                   |                         |
+| Datetimefromparts(year,month,day,hour,minute,seconds,milliseconds) |                                   |                         |
+| Eomonth(start_date[,month_toadd])                                  |                                   |                         |
 
+#### Using Mathematical Functions
+| Function name |     Example     | Description             |
+| :------------ | :-------------: | :---------------------- |
+| Abs(num)      |                 |                         |
+| Ceiling(num)  |                 | smallest integer >= num |
+| Exp(float)    | select exp(4.5) | return $e^(4.5)$        |
+
+#### Using Logical Functions
+| Function name | Example | Description |
+| :------------ | :-----: | :---------- |
+#### Using Ranking Function
+##### row_number()
+row_number() over(order by ...)
+不考虑重复，连续编号
+##### rank()
+考虑重复，不连续编号
+1 2 2 4 4 6 7 ...
+##### dense_rank()
+考虑重复，连续编号
+1 2 2 3 3 4 5 。...
+##### ntile()
+ntile(n) 将所有数据平（尽可能）分成n组，编号靠前的数量多
 #### Using Analytical Function
-|Function name|Example|Description|
-|:------------|:-----:|:----------|
+| Function name | Example | Description |
+| :------------ | :-----: | :---------- |
+略
 #### Using System Function
-|Function name|Example|Description|
-|:------------|:-----:|:----------|
+| Function name | Example | Description |
+| :------------ | :-----: | :---------- |
+| host_id       |         |             |
+| host_name     |         |             |
+| suser_sid     |         |             |
+| suser_id      |         |             |
+| suser_sname   |         |             |
+| user_id       |         |             |
+...
+2.50
 ---
 ### Summarizing and Grouping Data
 #### Summarizing Data by Using Aggregate Functions
+- 不能用在where子句
+- Avg()
+- Count()
+- Min/Max()
+- Sum()
 #### Grouping Data
+group by +聚合 不能加其他
