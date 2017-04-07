@@ -37,6 +37,11 @@
         - [Using Sealed Class](#using-sealed-class)
             - [Using Sealed Class](#using-sealed-class-1)
         - [Using Interfaces](#using-interfaces)
+    - [-6- Implementing Polymorphism](#-6--implementing-polymorphism)
+        - [Implementing Function Overloading](#implementing-function-overloading)
+        - [Implementing Operator Overloading](#implementing-operator-overloading)
+        - [Implementing Overriding](#implementing-overriding)
+    - [-7- File Input and Output](#-7--file-input-and-output)
 
 <!-- /TOC -->
 ---
@@ -208,14 +213,14 @@ temp note
 - Utilization Relationship 使用关系
 - Instantiation Relationship 实例关系
 ### Implementing Inheritance
-```csharp
+```
 base class --> derived class
 automobile --> Car
 ```
 Interfaces Relationship 继承关系：
 - 一个类只能有一个父类
-- overriding 改写 和 覆盖
-    - 改写修改了基类???
+- overriding 改写
+- new 覆盖
 - 子类可访问父类 protected
 - 继承可传递
 - 派生类是基类的扩展
@@ -227,8 +232,6 @@ Interfaces Relationship 继承关系：
 ```
 class <derived_class> : <base_class>
 ```
-派生类：
-- @todo
 
 ### Using Abstract Class
 - 不能实例化
@@ -252,3 +255,16 @@ sealed class-name(...);
 #### Using Sealed Class
 
 ### Using Interfaces
+- **Interfaces** are used when a standard structure of methods is to be followed by the classes, and where classes will implement the functionality.
+- **Abstract classes** are used when you want only a few methods to declare by the base class and the derived class will implement the functionality.
+- 接口成员的申明不能使用任何访问修饰符，实现接口时加访问修饰符
+- 显示接口成员只能通过接口调用
+
+
+## -6- Implementing Polymorphism
+### Implementing Function Overloading
+- 参数数量、类型、排列顺序不同
+- 返回类型不同不算
+### Implementing Operator Overloading
+### Implementing Overriding
+## -7- File Input and Output
