@@ -38,6 +38,24 @@
         - [Summarizing and Grouping Data](#summarizing-and-grouping-data)
             - [Summarizing Data by Using Aggregate Functions](#summarizing-data-by-using-aggregate-functions)
             - [Grouping Data](#grouping-data)
+                - [rollup](#rollup)
+                - [cube](#cube)
+                - [pivot](#pivot)
+    - [Chapter-3 Querying Data by Using Hoins and Subqueries](#chapter-3-querying-data-by-using-hoins-and-subqueries)
+        - [Querying Data by Using Joins](#querying-data-by-using-joins)
+            - [Using an Inner Join](#using-an-inner-join)
+                - [Using an Equi Join](#using-an-equi-join)
+                - [Using a Self Join](#using-a-self-join)
+            - [Using an Outer Join](#using-an-outer-join)
+            - [Using a Cross Join](#using-a-cross-join)
+        - [Querying Data by Using Subqueries](#querying-data-by-using-subqueries)
+            - [Using the IN and EXISTS Keywords](#using-the-in-and-exists-keywords)
+            - [Using Modified Comparison Operator](#using-modified-comparison-operator)
+            - [Using Aggregate Functions](#using-aggregate-functions)
+            - [Using Nested Subqueries](#using-nested-subqueries)
+            - [Using Correlated Subqueries](#using-correlated-subqueries)
+            - [Using the APPLY Operator](#using-the-apply-operator)
+        - [Managing Result Sets](#managing-result-sets)
 
 <!-- /TOC -->
 # Querying Data Using SQL Sever-I
@@ -154,18 +172,18 @@ select A 'a'...
 |      4      | dd.mm.yy  |
 |      5      | dd-mm-yy  |
 #### Using Date Functions
-| Function name                                                      |              Example              | Description             |
-| :----------------------------------------------------------------- | :-------------------------------: | :---------------------- |
-| Dateadd(date part, number, date)                                   | SELECT dateadd(mm,3,'2009-01-01') |                         |
-| datediff(date part, date1, date2)                                  |                                   |                         |
-| Datename(date part, date)                                          |                                   |                         |
-| Datepart(date part, date)                                          |                                   |                         |
-| Getdate()                                                          |                                   |                         |
-| Day/Mounth/Year(date)                                              |                                   |                         |
-| Getutcdate                                                         |                                   | return the current date |
-| Datefromparts(year,date,month)                                     |                                   |                         |
-| Datetimefromparts(year,month,day,hour,minute,seconds,milliseconds) |                                   |                         |
-| Eomonth(start_date[,month_toadd])                                  |                                   |                         |
+| Function name                     |              Example              | Description             |
+| :-------------------------------- | :-------------------------------: | :---------------------- |
+| Dateadd(date part, number, date)  | SELECT dateadd(mm,3,'2009-01-01') |                         |
+| datediff(date part, date1, date2) |                                   |                         |
+| Datename(date part, date)         |                                   |                         |
+| Datepart(date part, date)         |                                   |                         |
+| Getdate()                         |                                   |                         |
+| Day/Mounth/Year(date)             |                                   |                         |
+| Getutcdate                        |                                   | return the current date |
+| Datefromparts(year,date,month)    |                                   |                         |
+| Datetimefromparts(...)            |                                   |                         |
+| Eomonth(start_date[,month_toadd]) |                                   |                         |
 
 #### Using Mathematical Functions
 | Function name |     Example     | Description             |
@@ -214,3 +232,44 @@ ntile(n) 将所有数据平（尽可能）分成n组，编号靠前的数量多
 - Sum()
 #### Grouping Data
 group by +聚合 不能加其他
+having 组的筛选
+```sql
+GROUP BY
+    GROUPNG SETS
+    (
+        (...,...,...),
+        (...)
+    )
+```
+##### rollup
+##### cube
+##### pivot
+列转行
+```SQL
+
+```
+## Chapter-3 Querying Data by Using Hoins and Subqueries
+### Querying Data by Using Joins
+#### Using an Inner Join
+- natural join 基于公共属性的等值连接，并去除多余属性
+- join = inner join
+```sql
+SELECT ...
+FROM a JOIN b ON a.1 = b.1
+```
+##### Using an Equi Join
+##### Using a Self Join
+#### Using an Outer Join
+- 左外连接 保留左表所有行
+- 右外连接 保留右表所有行
+- 全外连接 保留两表所有行
+#### Using a Cross Join
+- 笛卡尔积
+### Querying Data by Using Subqueries
+#### Using the IN and EXISTS Keywords
+#### Using Modified Comparison Operator
+#### Using Aggregate Functions
+#### Using Nested Subqueries
+#### Using Correlated Subqueries
+#### Using the APPLY Operator
+### Managing Result Sets
