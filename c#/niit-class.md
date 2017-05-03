@@ -42,6 +42,14 @@
         - [Implementing Operator Overloading](#implementing-operator-overloading)
         - [Implementing Overriding](#implementing-overriding)
     - [-7- File Input and Output](#-7--file-input-and-output)
+        - [Implementing the File Input and Output Operations](#implementing-the-file-input-and-output-operations)
+        - [Implementing Reading and writing the Text Files](#implementing-reading-and-writing-the-text-files)
+        - [Implementing Implenemnt Reading and writing in Binary Files](#implementing-implenemnt-reading-and-writing-in-binary-files)
+        - [Implementing the Windows File System](#implementing-the-windows-file-system)
+    - [-8- Exception Handing](#-8--exception-handing)
+        - [Describing Exceptions](#describing-exceptions)
+        - [Handing Exceptions](#handing-exceptions)
+        - [Implementing the User-defined Exceptions](#implementing-the-user-defined-exceptions)
 
 <!-- /TOC -->
 ---
@@ -268,3 +276,11 @@ sealed class-name(...);
 ### Implementing Operator Overloading
 ### Implementing Overriding
 ## -7- File Input and Output
+### Implementing the File Input and Output Operations
+### Implementing Reading and writing the Text Files
+### Implementing Implenemnt Reading and writing in Binary Files
+### Implementing the Windows File System
+## -8- Exception Handing
+### Describing Exceptions
+### Handing Exceptions
+### Implementing the User-defined Exceptions 

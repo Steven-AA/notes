@@ -56,6 +56,21 @@
             - [Using Correlated Subqueries](#using-correlated-subqueries)
             - [Using the APPLY Operator](#using-the-apply-operator)
         - [Managing Result Sets](#managing-result-sets)
+    - [Chapter-4 Managing Databases and Tables](#chapter-4-managing-databases-and-tables)
+        - [Managing Databases](#managing-databases)
+            - [Identifying System Databases in SQL Server](#identifying-system-databases-in-sql-server)
+            - [Identifying the Database Files](#identifying-the-database-files)
+            - [Creating a User-Defined Database](#creating-a-user-defined-database)
+            - [Rename a User-Defined Database](#rename-a-user-defined-database)
+            - [Dropping a User-Defined Database](#dropping-a-user-defined-database)
+        - [Managing Tables](#managing-tables)
+            - [Creating Table](#creating-table)
+            - [Implementing Data Integrity](#implementing-data-integrity)
+            - [Creating Synonyms](#creating-synonyms)
+            - [Creating a Partition Table](#creating-a-partition-table)
+            - [Modifying a Table](#modifying-a-table)
+            - [Rename a Table](#rename-a-table)
+            - [Dropping a Table](#dropping-a-table)
 
 <!-- /TOC -->
 # Querying Data Using SQL Sever-I
@@ -73,14 +88,14 @@
 ##### Binary
 ##### Other
 #### Retrieving Specific Attributes
-```
+```sql
 SELECT [ALL | DISTINCT] select_column_list 
 [INTO [new_table_name]] 
 From {table_name | view_name} 
 [WHERE search_condition]
 ```
 ##### Rename
-```
+```sql
 select A as 'a',...
 select 'a' = A,...
 select A 'a'...
@@ -272,4 +287,24 @@ FROM a JOIN b ON a.1 = b.1
 #### Using Nested Subqueries
 #### Using Correlated Subqueries
 #### Using the APPLY Operator
+```SQL
+A [CROSS | OUTER] apply B
+```
+
 ### Managing Result Sets
+
+## Chapter-4 Managing Databases and Tables
+### Managing Databases
+#### Identifying System Databases in SQL Server
+#### Identifying the Database Files
+#### Creating a User-Defined Database
+#### Rename a User-Defined Database
+#### Dropping a User-Defined Database
+### Managing Tables
+#### Creating Table
+#### Implementing Data Integrity
+#### Creating Synonyms
+#### Creating a Partition Table
+#### Modifying a Table
+#### Rename a Table
+#### Dropping a Table
