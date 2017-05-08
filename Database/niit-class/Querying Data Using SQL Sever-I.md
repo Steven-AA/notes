@@ -71,6 +71,22 @@
             - [Modifying a Table](#modifying-a-table)
             - [Rename a Table](#rename-a-table)
             - [Dropping a Table](#dropping-a-table)
+    - [Chapter-5 Manipulating Data in Tables](#chapter-5-manipulating-data-in-tables)
+        - [Manipulating Data in a Table](#manipulating-data-in-a-table)
+            - [Storing Data in a Table](#storing-data-in-a-table)
+                - [Inserting Data in Related Tables](#inserting-data-in-related-tables)
+                    - [Copy Table into a new Table](#copy-table-into-a-new-table)
+                    - [Copy Table into existing Table](#copy-table-into-existing-table)
+                - [Inserting Data in a Identity Column into a Table](#inserting-data-in-a-identity-column-into-a-table)
+                - [Inserting the FILESTREAM Data](#inserting-the-filestream-data)
+            - [Updating Data in a Table](#updating-data-in-a-table)
+            - [Deleting Data Fron a Table](#deleting-data-fron-a-table)
+                - [Deleting ALL](#deleting-all)
+            - [Retrieving the Modified Data](#retrieving-the-modified-data)
+            - [Comparing and Updating Data](#comparing-and-updating-data)
+            - [Managing Hierarchical DatainTables](#managing-hierarchical-dataintables)
+        - [Manipulating XML Data](#manipulating-xml-data)
+    - [Chapter-6 Implementing Indexes, Views, and Full-Text Search](#chapter-6-implementing-indexes-views-and-full-text-search)
 
 <!-- /TOC -->
 # Querying Data Using SQL Sever-I
@@ -236,8 +252,10 @@ ntile(n) 将所有数据平（尽可能）分成n组，编号靠前的数量多
 | suser_sname   |         |             |
 | user_id       |         |             |
 ...
+
 2.50
 ---
+
 ### Summarizing and Grouping Data
 #### Summarizing Data by Using Aggregate Functions
 - 不能用在where子句
@@ -259,7 +277,7 @@ GROUP BY
 ##### rollup
 ##### cube
 ##### pivot
-列转行
+列转行@todo
 ```SQL
 
 ```
@@ -308,3 +326,71 @@ A [CROSS | OUTER] apply B
 #### Modifying a Table
 #### Rename a Table
 #### Dropping a Table
+
+## Chapter-5 Manipulating Data in Tables
+### Manipulating Data in a Table
+#### Storing Data in a Table
+```sql
+INSERT [INTO] {table_name} [(column_list)]
+VALUES {DEFAULT | values_list | select_statement}
+```
+##### Inserting Data in Related Tables
+- 先在主键所在表添加数据
+###### Copy Table into a new Table
+```sql
+SELECT * INTO new_table_name
+FROM old_table_name
+where ...
+...
+```
+###### Copy Table into existing Table
+```sql
+INSERT INTO new_table_name
+SELECT * FROM old_table_name
+where ...
+...
+```
+##### Inserting Data in a Identity Column into a Table
+```sql
+SET IDENTITY_INSERT Emp ON
+```
+##### Inserting the FILESTREAM Data
+```sql
+USE TekSoft
+INSERT INTO A(a,b,c)
+VALUES (NEWID(),b,c)
+```
+#### Updating Data in a Table
+```sql
+UPDATE table_name
+SET column_name = value [,column_name = value]
+[FROM table_name]
+[WHERE condition]
+```
+#### Deleting Data Fron a Table
+```sql
+DELETE [FROM] table_name
+[WHERE condition]
+```
+- 先在外键所在表删除数据
+##### Deleting ALL
+```sql
+DELETE table_name
+TRUNCATE TABLE table_name
+```
+#### Retrieving the Modified Data
+@todo
+#### Comparing and Updating Data
+```sql
+MERGE A AS TARGET
+USING B AS　SOURCE
+ON (TARGET.a = SOURCE.a)
+WHEN MATCHED AND TARGET.b <> SOURCE.b
+THEN 
+@todo
+```
+#### Managing Hierarchical DatainTables
+--
+### Manipulating XML Data
+E**x**tensible **M**arkup **L**anguage
+## Chapter-6 Implementing Indexes, Views, and Full-Text Search
