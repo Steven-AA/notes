@@ -393,4 +393,7 @@ THEN
 --
 ### Manipulating XML Data
 E**x**tensible **M**arkup **L**anguage
+- 只能有一个根元素
+- 注释 <!-- -->
+- Schema
 ## Chapter-6 Implementing Indexes, Views, and Full-Text Search
