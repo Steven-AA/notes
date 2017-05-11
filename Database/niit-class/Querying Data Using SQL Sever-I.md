@@ -86,7 +86,29 @@
             - [Comparing and Updating Data](#comparing-and-updating-data)
             - [Managing Hierarchical DatainTables](#managing-hierarchical-dataintables)
         - [Manipulating XML Data](#manipulating-xml-data)
+            - [Schema](#schema)
+            - [Storing XML Data in a Table](#storing-xml-data-in-a-table)
+                - [Storing XML Data in a Rowset](#storing-xml-data-in-a-rowset)
+                - [Importing XML data into SQL Sever](#importing-xml-data-into-sql-sever)
+                    - [Untyped XML](#untyped-xml)
+                    - [Typed XML](#typed-xml)
+            - [Retrieving Table Data into XML Format](#retrieving-table-data-into-xml-format)
+            - [Modifying XML Data](#modifying-xml-data)
     - [Chapter-6 Implementing Indexes, Views, and Full-Text Search](#chapter-6-implementing-indexes-views-and-full-text-search)
+        - [Creating and Managing Indexes](#creating-and-managing-indexes)
+            - [Identifying the Types of Indexes](#identifying-the-types-of-indexes)
+            - [Creating Indexes](#creating-indexes)
+            - [Creating XML Indexes](#creating-xml-indexes)
+            - [Creating Partition Indexes](#creating-partition-indexes)
+            - [Managing Indexes](#managing-indexes)
+            - [Displaying Execution Plan](#displaying-execution-plan)
+            - [Identifying the Logical Order of Operations in SELECT Statemment](#identifying-the-logical-order-of-operations-in-select-statemment)
+            - [Controlling Execution Plan](#controlling-execution-plan)
+        - [Creating and Managing Views](#creating-and-managing-views)
+        - [Implementing a Full-Text Search](#implementing-a-full-text-search)
+    - [Chapter-7 Implementing Stored Procedures and Functions](#chapter-7-implementing-stored-procedures-and-functions)
+    - [Chapter-8 Working with Triggers and Transactions](#chapter-8-working-with-triggers-and-transactions)
+    - [Chapter-9 Monitoring and Optimizing Performance](#chapter-9-monitoring-and-optimizing-performance)
 
 <!-- /TOC -->
 # Querying Data Using SQL Sever-I
@@ -393,7 +415,64 @@ THEN
 --
 ### Manipulating XML Data
 E**x**tensible **M**arkup **L**anguage
+- <?...?> PI 处理指令
 - 只能有一个根元素
 - 注释 <!-- -->
 - Schema
+#### Schema
+```xml
+<xsd:Schema xmlns:xsd="">
+@todo
+```
+#### Storing XML Data in a Table
+##### Storing XML Data in a Rowset
+- Parse the XML document
+    OPENXML()
+- Retrieve a rowset from the tree
+    
+- Store the dara from the rowset
+- Clear the memory
+##### Importing XML data into SQL Sever
+###### Untyped XML
+```sql
+INSERT INTO A
+VALUES ('<....../>')
+
+
+```
+###### Typed XML
+#### Retrieving Table Data into XML Format
+#### Modifying XML Data
+
 ## Chapter-6 Implementing Indexes, Views, and Full-Text Search
+### Creating and Managing Indexes
+#### Identifying the Types of Indexes
+- Clustered Index 聚集索引(排序过的数据，唯一)
+- Nonclustered Index 
+#### Creating Indexes
+```sql
+CREATE [UNIQUE] [CLUSTERED | NONCLUSTERED] INDEX index_name
+ON [{darabase_name.[schema_name]. | schema_name.}]
+{table_name/view_name}(column [ASC | DESC][,...n])
+[INCLUDE (column_name[,...n])]
+[WITH(<relation_index_option>[,...n])]
+@todo
+```
+#### Creating XML Indexes
+#### Creating Partition Indexes
+```sql
+CREATE PARTITION SCHEMA A
+AS PARTITION B
+TO (fg1,fg2,fg3,fg4,fg5)
+```
+#### Managing Indexes
+#### Displaying Execution Plan
+#### Identifying the Logical Order of Operations in SELECT Statemment
+#### Controlling Execution Plan
+### Creating and Managing Views
+### Implementing a Full-Text Search
+## Chapter-7 Implementing Stored Procedures and Functions
+
+## Chapter-8 Working with Triggers and Transactions
+
+## Chapter-9 Monitoring and Optimizing Performance
