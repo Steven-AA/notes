@@ -105,6 +105,11 @@
             - [Identifying the Logical Order of Operations in SELECT Statemment](#identifying-the-logical-order-of-operations-in-select-statemment)
             - [Controlling Execution Plan](#controlling-execution-plan)
         - [Creating and Managing Views](#creating-and-managing-views)
+            - [Creating Views](#creating-views)
+            - [Managing Views](#managing-views)
+            - [Indexing Views](#indexing-views)
+            - [Creating Distributed Partition Views](#creating-distributed-partition-views)
+            - [Understanding Catalog Views](#understanding-catalog-views)
         - [Implementing a Full-Text Search](#implementing-a-full-text-search)
     - [Chapter-7 Implementing Stored Procedures and Functions](#chapter-7-implementing-stored-procedures-and-functions)
     - [Chapter-8 Working with Triggers and Transactions](#chapter-8-working-with-triggers-and-transactions)
@@ -429,7 +434,7 @@ E**x**tensible **M**arkup **L**anguage
 - Parse the XML document
     OPENXML()
 - Retrieve a rowset from the tree
-    
+
 - Store the dara from the rowset
 - Clear the memory
 ##### Importing XML data into SQL Sever
@@ -470,6 +475,18 @@ TO (fg1,fg2,fg3,fg4,fg5)
 #### Identifying the Logical Order of Operations in SELECT Statemment
 #### Controlling Execution Plan
 ### Creating and Managing Views
+#### Creating Views
+```sql
+CREATE VIEW view_name
+[(column_name [, column_name]...)]
+[WITH ENCRYPTION [, SCHEMABINDING]]
+AS select_statement [WITH CHECK OPTION]
+```
+#### Managing Views
+#### Indexing Views
+#### Creating Distributed Partition Views
+#### Understanding Catalog Views
+
 ### Implementing a Full-Text Search
 ## Chapter-7 Implementing Stored Procedures and Functions
 
